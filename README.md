@@ -1,7 +1,7 @@
 # conversao-distancia
 
-## *Aplicação escrita em Python utilizando flask*
-  - Os passos a seguir descrevem como criar e excutar esta aplicação em containers.
+  ## *Aplicação escrita em Python utilizando flask*
+    - Os passos a seguir descrevem como criar e excutar esta aplicação em containers.
 
 ## Criação do Dockerfile
   - As etapas de construção da imagem são descritas no exemplo Dockerfile abaixo:
@@ -27,10 +27,10 @@ CMD ["gunicorn", "--workers=3", "--bind", "0.0.0.0:80", "app:app"]
 ## Criando a imagem e enviando para o docker hub
   - Na criação da imagem para enviar para o registry do docker, é necessário um namespace válido e também adicionar um nome para o repositório e uma tag como utilizado logo abaixo:
 
-  | Namespace | repositório | Tag |
-  |-----------|-------------|-----|
-  |machado1976 | conversao_distancia|v1|
-  |machado1976 | conversao_distancia|latest|  
+    | Namespace | repositório | Tag |
+    |-----------|-------------|-----|
+    |machado1976 | conversao_distancia|v1|
+    |machado1976 | conversao_distancia|latest|  
 
 - Comando para criar a imagem.   
    `$ docker build -t machado1976/conversao_distancia:v1 .`
@@ -47,7 +47,7 @@ CMD ["gunicorn", "--workers=3", "--bind", "0.0.0.0:80", "app:app"]
 ## Criando o container
 - Para criar e utilizar o container, basta executar o comando como descrito logo abaixo e alterar a porta que ficará exposta no host de acordo com a necessidade. Neste exemplo esta sendo utilizada a porta 8080 para ser acessada do host local.      
 
- `$ docker container run -d --name conversao_distancia -p 8080:80 machado1976/conversao_distancia:v1`
+   `$ docker container run -d --name conversao_distancia -p 8080:80 machado1976/conversao_distancia:v1`
 
  ## Acessando a aplicação
  - Agora para acessar a aplicação é só utilizar o browser com o seguinte endereço:      
